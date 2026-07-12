@@ -1,3 +1,5 @@
 Hello GIT!
 
-checking diff cmd
+checking diff cm
+
+restore cmd
