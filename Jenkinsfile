@@ -1,9 +1,17 @@
 pipeline {
     agent any
+
     stages {
-        stage('Welcome') {
+
+        stage('Linux Commands') {
             steps {
-                echo 'Welcome to Jenkins Pipeline!'
+                echo 'Executing Linux Commands...'
+
+                sh 'pwd'
+
+                sh 'ls -la'
+
+                sh 'date'
             }
         }
 
