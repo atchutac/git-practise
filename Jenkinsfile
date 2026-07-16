@@ -3,15 +3,9 @@ pipeline {
 
     stages {
 
-        stage('Linux Commands') {
+        stage('Welcome') {
             steps {
-                echo 'Executing Linux Commands...'
-
-                sh 'pwd'
-
-                sh 'ls -la'
-
-                sh 'date'
+                echo 'Hello from Jenkinsfile!'
             }
         }
 
