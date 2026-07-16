@@ -1,28 +1,17 @@
 pipeline {
     agent any
 
-    environment {
-        APP_NAME = "MyApp"
-        VERSION = "1.0"
+    parameters {
+        string(name: 'APP_NAME', defaultValue: 'MyApp', description: 'Enter Application Name')
+        choice(name: 'ENVIRONMENT', choices: ['Development', 'Testing', 'Production'], description: 'Select Environment')
     }
 
     stages {
 
         stage('Build') {
             steps {
-                echo "Building ${APP_NAME}"
-            }
-        }
-
-        stage('Test') {
-            steps {
-                echo "Testing Version ${VERSION}"
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                echo "Deploying ${APP_NAME} Version ${VERSION}"
+                echo "Application: ${params.APP_NAME}"
+                echo "Environment: ${params.ENVIRONMENT}"
             }
         }
 
